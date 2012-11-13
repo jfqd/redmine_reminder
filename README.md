@@ -18,7 +18,7 @@ To install the plugin clone the repro from github and migrate the database:
 
 ```
 cd <into your redmine root directory>
-git clone git://github.com/jfqd/redmine_reminder.git vendor/plugin/redmine_reminder
+git clone git://github.com/jfqd/redmine_reminder.git vendor/plugins/redmine_reminder
 rake db:migrate_plugins RAILS_ENV=production
 ```
 
