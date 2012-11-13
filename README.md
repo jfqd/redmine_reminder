@@ -10,7 +10,7 @@ Issue reminder plugin for redmine. Sends email notifications for open issues to 
 
 ## Getting the plugin
 
-A copy of the plugin can be downloaded from {GitHub}[http://github.com/jfqd/redmine_reminder]
+A copy of the plugin can be downloaded from GitHub: http://github.com/jfqd/redmine_reminder
 
 ## Installation
 
@@ -54,6 +54,3 @@ This plugin is licensed under the MIT license. See LICENSE-file for details.
 ## Copyright
 
 Copyright (c) 2012 Stefan Husch, qutic development. The development has been fully sponsored by netz98.de
-
-
-rake -f /Users/jerry/Desktop/netz98-redmine/Rakefile redmine:reminder:send_notification project=project_identifier fallback_email=info@example.com
