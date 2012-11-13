@@ -1,0 +1,3 @@
+de:
+  reminder_subject: "Redmine Erinnerung [%{project_name} - #%{issue_id}] %{subject}"
+  reminder_body: "%{field_due_date}: %{due_date}\n\n%{issues_url}"
