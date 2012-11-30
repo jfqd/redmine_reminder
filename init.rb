@@ -1,5 +1,5 @@
 require 'redmine'
-require 'mailer_patch'
+require 'my_mailer_patch'
 
 Redmine::Plugin.register :redmine_reminder do
   name 'Redmine reminder plugin'
