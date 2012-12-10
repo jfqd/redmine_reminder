@@ -14,7 +14,7 @@ module RedmineReminder
           else
             c = CustomField.find_by_name('pm-email')
             recipient = issue.custom_value_for(c).try(:value)
-            puts "CustomField.value => #{recipient}"
+            # puts "CustomField.value => #{recipient}"
           end
           recipient = fallback_email if recipient.blank? && !fallback_email.blank?
           puts "Send reminder notification for issue ##{issue.id} to #{recipient}."
