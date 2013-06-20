@@ -50,9 +50,7 @@ module RedmineHelpdesk
           return
         end
         # send notification mail to support stuff
-        Rails.logger.warn("recipients: #{recipients} (#{recipients.class.name})")
         recipients = recipients.split(",").collect(&:strip) # rescue nil
-        Rails.logger.warn("recipients: #{recipients} (#{recipients.class.name})")
         if recipients.nil?
           Rails.logger.warn("[IssueObserver#send_priority_notification_mail] rescue 'notification-mail-addresses' to_a. Cannot send notification mail")
           return
