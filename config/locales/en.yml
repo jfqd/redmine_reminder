@@ -1,3 +1,6 @@
 de:
   reminder_subject: "Redmine Erinnerung [%{project_name} - #%{issue_id}] %{subject}"
   reminder_body: "%{field_due_date}: %{due_date}\n\n%{issues_url}"
+  reminder_pm_body: "A new issue was created in the project '%{project_name}':\n\n%{issues_url}"
+  reminder_priority_body: "A new issue was created in the project '%{project_name}' with priority '%{priority}'.\n\n%{issues_url}"
+  reminder_sms_body: "A new issue was created in the project '%{project_name}' with priority '%{priority}'.\n\n%{issues_url}"

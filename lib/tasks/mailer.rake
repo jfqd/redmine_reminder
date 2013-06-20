@@ -14,7 +14,7 @@ namespace :redmine do
       fallback_email = ENV['fallback_email'].blank? ? nil : ENV['fallback_email']
       # send notification email to pm or assigned user
       puts "Processing #{issues.size} notifications..."
-      issues.each { |issue| Mailer.reminder_notification(issue,fallback_email).deliver }
+      issues.each { |issue| ReminderMailer.send_reminder(issue,fallback_email).deliver }
     end # task :send_notification
     
   end # namespace :email

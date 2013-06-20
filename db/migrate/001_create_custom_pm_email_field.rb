@@ -5,8 +5,8 @@ class CreateCustomPmEmailField < ActiveRecord::Migration
       :editable => true,
       :visible => true,
       :field_format => 'string')
-    c.type = 'ProjectCustomField' # cannot be set by mass assignement!
-    c.save(false)
+    c.type = 'ProjectCustomField' # cannot be set by mass assignment!
+    c.save
   end
 
   def self.down
