@@ -12,7 +12,7 @@ Redmine::Plugin.register :redmine_reminder do
   
   settings :default => {
     'sms_gateway_url'  => 'https://smsserver.mindmatics.com',
-    'sms_gateway_path' => '/messagegateway/',
+    'sms_gateway_path' => '/messagegateway/outbound/sms',
     'sms_gateway_uid'  => 'my user id',
     'sms_gateway_pwd'  => 'my user pwd',
     'sms_gateway_sender_phone_number' => '0049170987654321'
