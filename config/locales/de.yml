@@ -5,6 +5,7 @@ de:
   reminder_priority_body: "Im Projekt '%{project_name}' wurde ein neues Ticket mit Priorität '%{priority}' erstellt:\n\n%{issues_url}"
   reminder_sms_body: "Im Projekt '%{project_name}' wurde ein neues Ticket mit Priorität '%{priority}' erstellt:\n\n%{issues_url}"
   sms_gateway_label_url: "MindMatics Gateway URL"
+  sms_gateway_label_path: "Pfad"
   sms_gateway_label_uid: "Kundennummer"
   sms_gateway_label_pwd: "Passwort"
   sms_gateway_label_sender_phone_number: "Absender Telefonnummer"

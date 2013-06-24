@@ -4,6 +4,11 @@
 </p>
 
 <p>
+  <label><%= l(:sms_gateway_label_path) %></label>
+  <%= text_field_tag 'settings[sms_gateway_path]', @settings['sms_gateway_path'], :size => 60 %>
+</p>
+
+<p>
   <label><%= l(:sms_gateway_label_uid)%></label>
   <%= text_field_tag 'settings[sms_gateway_uid]', @settings['sms_gateway_uid'], :size => 60 %>
 </p>
