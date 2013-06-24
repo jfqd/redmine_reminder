@@ -1,0 +1,19 @@
+<p>
+  <label><%= l(:sms_gateway_label_url) %></label>
+  <%= text_field_tag 'settings[sms_gateway_url]', @settings['sms_gateway_url'], :size => 60 %>
+</p>
+
+<p>
+  <label><%= l(:sms_gateway_label_uid)%></label>
+  <%= text_field_tag 'settings[sms_gateway_uid]', @settings['sms_gateway_uid'], :size => 60 %>
+</p>
+
+<p>
+  <label><%= l(:sms_gateway_label_pwd)%></label>
+  <%= text_field_tag 'settings[sms_gateway_pwd]', @settings['sms_gateway_pwd'], :size => 60 %>
+</p>
+
+<p>
+  <label><%= l(:sms_gateway_label_sender_phone_number)%></label>
+  <%= text_field_tag 'settings[sms_gateway_sender_phone_number]', @settings['sms_gateway_sender_phone_number'], :size => 60 %>
+</p>

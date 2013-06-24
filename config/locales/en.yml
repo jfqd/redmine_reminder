@@ -4,3 +4,7 @@ de:
   reminder_pm_body: "A new issue was created in the project '%{project_name}':\n\n%{issues_url}"
   reminder_priority_body: "A new issue was created in the project '%{project_name}' with priority '%{priority}'.\n\n%{issues_url}"
   reminder_sms_body: "A new issue was created in the project '%{project_name}' with priority '%{priority}'.\n\n%{issues_url}"
+  sms_gateway_label_url: "MindMatics Gateway URL"
+  sms_gateway_label_uid: "Customer identification"
+  sms_gateway_label_pwd: "Password"
+  sms_gateway_label_sender_phone_number: "Sender Phone Number"
