@@ -7,6 +7,8 @@ Issue reminder plugin for redmine. Sends email notifications for open issues to 
 * Send a reminder email to the assigned user of the open issue
 * If no user is assigned to the issue the email address of the project manager is used
 * If no project manager email address is available a fallback email address is used
+* send a notification email to the project manager if a new issue was created
+* send notifications by email and sms if an issue with a pre defined priority was created
 
 ## Getting the plugin
 
@@ -32,9 +34,16 @@ rm -rf vendor/plugin/redmine_reminder
 
 Further information about plugin installation can be found at: http://www.redmine.org/wiki/redmine/Plugins.
 
-## Usage
+## Usage Notification
 
-To use the helpdesk functionality you need to 
+* add the custom field 'notification-mail-addresses' to a project in the project configuration and add one or more email addresses separated by a comma
+* add the custom field 'notification-mail-priority' to a project in the project configuration and add an id (!) of a trigger priority
+* add the custom field 'notification-sms-phone-numbers' to a project in the project configuration and add one or more mobile phone numbers separated by a comma
+* add the custom field 'notification-sms-priority' to a project in the project configuration and add an id (!) of a trigger priority
+
+## Usage Reminder
+
+To use the reminder functionality you need to 
 
 * add the project manager email-address to the custom field 'pm-email' of each project
 * add a cronjob. The following syntax is for ubuntu linux:
@@ -45,7 +54,9 @@ To use the helpdesk functionality you need to
 
 ## Compatibility
 
-This plugin was written for Redmine v1.2.x. Any other version might work.
+The latest version of this plugin is only compatible with Redmine 2.3.x.
+
+A version for Redmine 1.2.x. up to 1.4.7. ist tagged with [v1.4](https://github.com/jfqd/redmine_reminder/tree/v1.4 "plugin version for Redmine 1.2.x up to 1.4.7") and available for [download on github](https://github.com/jfqd/redmine_helpdesk/archive/v1.4.zip "download plugin for Redmine 1.2.x up to 1.4.7").
 
 ## License
 
@@ -53,4 +64,4 @@ This plugin is licensed under the MIT license. See LICENSE-file for details.
 
 ## Copyright
 
-Copyright (c) 2012 Stefan Husch, qutic development. The development has been fully sponsored by netz98.de
+Copyright (c) 2012-2013 Stefan Husch, qutic development. The development has been fully sponsored by netz98.de
