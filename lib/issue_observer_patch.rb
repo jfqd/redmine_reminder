@@ -74,7 +74,7 @@ module RedmineHelpdesk
           Rails.logger.warn("[IssueObserver#send_priority_notification_sms] empty 'notification-sms-phone-numbers' custom field. Cannot send notification sms")
           return
         end
-        phone_numbers = recipient.split(",").collect(&:strip) rescue nil
+        phone_numbers = phone_numbers.split(",").collect(&:strip) rescue nil
         if phone_numbers.nil?
           Rails.logger.warn("[IssueObserver#send_priority_notification_sms] rescue 'notification-sms-phone-numbers' to_a. Cannot send notification mail")
           return
