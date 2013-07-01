@@ -75,7 +75,7 @@ module RedmineHelpdesk
           return
         end
         # send notification sms to support stuff
-        ReminderSms.send_notification(phone_numbers, :reminder_sms_body)
+        ReminderMailer.notification_mail(issue, phone_numbers, nil, :reminder_sms_body)
       end
       
     end # module InstanceMethods

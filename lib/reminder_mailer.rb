@@ -69,7 +69,11 @@ class ReminderMailer < ActionMailer::Base
       when :reminder_priority_body
         reminder_priority_body(issue)
       when :reminder_sms_body
-        reminder_sms_body(issue)
+        ReminderSms.send_notification(
+          recipients,
+          reminder_sms_body(issue)
+        )
+        nil
     end
     # sending out the journal note to the support client
     mail(
@@ -78,7 +82,7 @@ class ReminderMailer < ActionMailer::Base
       :subject => subject,
       :body    => body,
       :date    => Time.zone.now
-    )
+    ) if body.present?
   end
   
   private

@@ -14,6 +14,7 @@ class ReminderSms
     private
   
     def send_sms(number, text, params={})
+      settings = Setting.send("plugin_redmine_reminder") rescue []
       # setup query parameters
       params['version']  = '3.0'
       params['cid']      = settings['sms_gateway_uid']
@@ -27,7 +28,10 @@ class ReminderSms
       http.use_ssl = true if uri.scheme == 'https'
       req = Net::HTTP::Get.new( uri.request_uri )
       response = http.request(req)
-      return response.code == 200 ? true : false
+      if response.code != 200
+        Rails.logger.warn("[ReminderSms#send_notification] Response-Error: #{response.code}, #{response.body}")
+        return false
+      end
       # https://smsserver.mindmatics.com/messagegateway/errorcodes/
       d = REXML::Document.new(response.body)
       r = d.root.elements["/result"].text
