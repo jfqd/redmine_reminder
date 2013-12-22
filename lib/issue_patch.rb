@@ -82,5 +82,5 @@ module RedmineHelpdesk
   end # module JournalObserverPatch
 end # module RedmineHelpdesk
 
-# Add module to IssueObserver class
-IssueObserver.send(:include, RedmineHelpdesk::IssuePatch)
+# Add module to Issue class
+Issue.send(:include, RedmineHelpdesk::IssuePatch)
