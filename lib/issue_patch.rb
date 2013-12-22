@@ -26,7 +26,7 @@ module RedmineHelpdesk
         return if project.nil? || field.blank?
         recipient = project.custom_value_for(field).try(:value)
         if recipient.blank?
-          Rails.logger.warn("[IssueObserver#send_notification_mail] empty 'pm-email' custom field. Cannot send notification mail")
+          Rails.logger.warn("[Issue#send_notification_mail] empty 'pm-email' custom field. Cannot send notification mail")
           return
         end
         # send notification mail to pm
@@ -46,13 +46,13 @@ module RedmineHelpdesk
         field = CustomField.find_by_name('notification-mail-addresses')
         recipients = project.custom_value_for(field).try(:value)
         if recipients.blank?
-          Rails.logger.warn("[IssueObserver#send_priority_notification_mail] empty 'notification-mail-addresses' custom field. Cannot send notification mail")
+          Rails.logger.warn("[Issue#send_priority_notification_mail] empty 'notification-mail-addresses' custom field. Cannot send notification mail")
           return
         end
         # send notification mail to support stuff
         recipients = recipients.split(",").collect(&:strip) # rescue nil
         if recipients.nil?
-          Rails.logger.warn("[IssueObserver#send_priority_notification_mail] rescue 'notification-mail-addresses' to_a. Cannot send notification mail")
+          Rails.logger.warn("[Issue#send_priority_notification_mail] rescue 'notification-mail-addresses' to_a. Cannot send notification mail")
           return
         end
         subject = "[#{project.name} - #{issue.tracker.name} ##{issue.id}] PRIORITY NOTIFICATION : #{issue.subject}"
@@ -71,7 +71,7 @@ module RedmineHelpdesk
         field = CustomField.find_by_name('notification-sms-phone-numbers')
         phone_numbers = project.custom_value_for(field).try(:value)
         if phone_numbers.blank?
-          Rails.logger.warn("[IssueObserver#send_priority_notification_sms] empty 'notification-sms-phone-numbers' custom field. Cannot send notification sms")
+          Rails.logger.warn("[Issue#send_priority_notification_sms] empty 'notification-sms-phone-numbers' custom field. Cannot send notification sms")
           return
         end
         # send notification sms to support stuff
@@ -79,7 +79,7 @@ module RedmineHelpdesk
       end
       
     end # module InstanceMethods
-  end # module JournalObserverPatch
+  end # module IssuePatch
 end # module RedmineHelpdesk
 
 # Add module to Issue class
