@@ -13,9 +13,9 @@ module RedmineHelpdesk
       def send_notification_with_helpdesk
         Mailer.deliver_issue_add(self) if Setting.notified_events.include?('issue_added')
         # now lets run our after_create hooks
-        send_notification_mail issue
-        send_priority_notification_mail issue
-        send_priority_notification_sms issue
+        send_notification_mail self
+        send_priority_notification_mail self
+        send_priority_notification_sms self
       end
       
       # check if a notification mail should be send to
