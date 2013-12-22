@@ -1,17 +1,17 @@
 module RedmineHelpdesk
-  module IssueObserverPatch
+  module IssuePatch
     def self.included(base) # :nodoc:
       base.send(:include, InstanceMethods)
       
       base.class_eval do
-        alias_method_chain :after_create,  :reminder
+        alias_method_chain :send_notification,  :helpdesk
       end
     end
 
     module InstanceMethods
       # Overrides the after_create method
-      def after_create_with_reminder(issue)
-        Mailer.issue_add(issue).deliver if Setting.notified_events.include?('issue_added')
+      def send_notification_with_helpdesk
+        Mailer.deliver_issue_add(self) if Setting.notified_events.include?('issue_added')
         # now lets run our after_create hooks
         send_notification_mail issue
         send_priority_notification_mail issue
@@ -83,4 +83,4 @@ module RedmineHelpdesk
 end # module RedmineHelpdesk
 
 # Add module to IssueObserver class
-IssueObserver.send(:include, RedmineHelpdesk::IssueObserverPatch)
+IssueObserver.send(:include, RedmineHelpdesk::IssuePatch)

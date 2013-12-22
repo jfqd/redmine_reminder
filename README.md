@@ -54,9 +54,10 @@ To use the reminder functionality you need to
 
 ## Compatibility
 
-The latest version of this plugin is only compatible with Redmine 2.3.x.
+The latest version of this plugin is only compatible with Redmine 2.4.x.
 
-A version for Redmine 1.2.x. up to 1.4.7. ist tagged with [v1.4](https://github.com/jfqd/redmine_reminder/tree/v1.4 "plugin version for Redmine 1.2.x up to 1.4.7") and available for [download on github](https://github.com/jfqd/redmine_helpdesk/archive/v1.4.zip "download plugin for Redmine 1.2.x up to 1.4.7").
+* A version for Redmine 1.2.x. up to 1.4.7. is tagged with [v1.4](https://github.com/jfqd/redmine_reminder/tree/v1.4 "plugin version for Redmine 1.2.x up to 1.4.7") and available for [download on github](https://github.com/jfqd/redmine_reminder/archive/v1.4.zip "download plugin for Redmine 1.2.x up to 1.4.7").
+* A version for Redmine 2.3.x is tagged with [v2.3](https://github.com/jfqd/redmine_reminder/tree/v2.3 "plugin version for Redmine 2.3.x") and available for [download on github](https://github.com/jfqd/redmine_reminder/archive/v2.3.zip "download plugin for Redmine 2.3.x").
 
 ## License
 
